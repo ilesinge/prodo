@@ -37,12 +37,12 @@
         opacity: 0.5;
     }
     iframe {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		border: 0;
-		opacity: 0.4;
-	}
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        opacity: 0.4;
+    }
 </style>
 <script>
     var search = window.location.search.split('?');
@@ -50,7 +50,7 @@
     if (data) {
         window.location = 'data:text/html;charset=utf-8;base64,'+data;
     }
-	document.getElementById('content').focus();
+    document.getElementById('content').focus();
     function updateLink() {
         var text = document.getElementById('content');
         var base64 = window.btoa(unescape(encodeURIComponent(text.value)));
