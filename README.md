@@ -1,2 +1,1 @@
-# prodo
-prodo : simple web publishing
+# prodo: *simple web publishing*
