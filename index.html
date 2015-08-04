@@ -1,57 +1,61 @@
-<title>prodo</title>
-<link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAVFBMVEUAAAA7HThLKlVZMGdkTZ5+aHKokpzy6tny8fPz8fPz8vT08vL18/P18/X29PT29fX29fb29vb39ff39vj59/n5+Pf6+fj6+vn7+/r8+/v8/Pv///+TfMMYAAAAAXRSTlMAQObYZgAAAGFJREFUGBkFwTGKAgEQAMGaZdxAEAz8/w8Fk0uE27ZqnAC+MG6vaeI9fXFQVbnPiYOqivucLEn4Iw6qqufMYFVCDz4sAYAlALBc4BoGyz8QsFzTxABLCQGrAIhVAMQYAMgPRMM6KFq6B60AAAAASUVORK5CYII=" rel="icon" type="image/png" />
-<!-- https://github.com/ilesinge/prodo -->
+<!DOCTYPE html>
+<head>
+    <title>prodo</title>
+    <link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAVFBMVEUAAAA7HThLKlVZMGdkTZ5+aHKokpzy6tny8fPz8fPz8vT08vL18/P18/X29PT29fX29fb29vb39ff39vj59/n5+Pf6+fj6+vn7+/r8+/v8/Pv///+TfMMYAAAAAXRSTlMAQObYZgAAAGFJREFUGBkFwTGKAgEQAMGaZdxAEAz8/w8Fk0uE27ZqnAC+MG6vaeI9fXFQVbnPiYOqivucLEn4Iw6qqufMYFVCDz4sAYAlALBc4BoGyz8QsFzTxABLCQGrAIhVAMQYAMgPRMM6KFq6B60AAAAASUVORK5CYII=" rel="icon" type="image/png" />
+    <!-- https://github.com/ilesinge/prodo -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: monospace;
+        }
+        textarea {
+            position: absolute;
+            box-sizing: border-box;
+            margin:0;
+            outline: 0;
+            resize: none;
+            width: 100%;
+            height: 100%;
+            border: none;
+            z-index: 10;
+            background: none;
+            padding: 30px 10px 10px 10px;
+        }
+        a {
+            display: none;
+            position: fixed;
+            z-index: 20;
+            right: 0;
+            top: 0;
+            background-color: black;
+            padding: 10px 15px;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: white;
+            opacity: 0.5;
+            letter-spacing: 1px;
+            transition: opacity .1s;
+        }
+        a:hover, a:focus {
+            opacity: 1;
+        }
+        a:active {
+            color: #ccc;
+        }
+        iframe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            opacity: 0.4;
+        }
+    </style>
+</head>
 <a id="link" tabindex="2">link</a>
 <iframe id="iframe"></iframe>
 <textarea tabindex="1" id="content" onkeyup="updateLink()"></textarea>
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: monospace;
-    }
-    textarea {
-        position: absolute;
-        box-sizing: border-box;
-        margin:0;
-        outline: 0;
-        resize: none;
-        width: 100%;
-        height: 100%;
-        border: none;
-        z-index: 10;
-        background: none;
-        padding: 30px 10px 10px 10px;
-    }
-    a {
-        display: none;
-        position: fixed;
-        z-index: 20;
-        right: 0;
-        top: 0;
-        background-color: black;
-        padding: 10px 15px;
-        text-decoration: none;
-        text-transform: uppercase;
-        color: white;
-        opacity: 0.5;
-        letter-spacing: 1px;
-        transition: opacity .1s;
-    }
-    a:hover, a:focus {
-        opacity: 1;
-    }
-    a:active {
-        color: #ccc;
-    }
-    iframe {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border: 0;
-        opacity: 0.4;
-    }
-</style>
+
 <script>
     var search = window.location.search.split('?');
     var data = search[search.length - 1];
