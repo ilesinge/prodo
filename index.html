@@ -1,9 +1,9 @@
 <title>prodo</title>
 <link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAVFBMVEUAAAA7HThLKlVZMGdkTZ5+aHKokpzy6tny8fPz8fPz8vT08vL18/P18/X29PT29fX29fb29vb39ff39vj59/n5+Pf6+fj6+vn7+/r8+/v8/Pv///+TfMMYAAAAAXRSTlMAQObYZgAAAGFJREFUGBkFwTGKAgEQAMGaZdxAEAz8/w8Fk0uE27ZqnAC+MG6vaeI9fXFQVbnPiYOqivucLEn4Iw6qqufMYFVCDz4sAYAlALBc4BoGyz8QsFzTxABLCQGrAIhVAMQYAMgPRMM6KFq6B60AAAAASUVORK5CYII=" rel="icon" type="image/png" />
 <!-- https://github.com/ilesinge/prodo -->
-<a id="link">HTTP link</a>
+<a id="link" tabindex="2">link</a>
 <iframe id="iframe"></iframe>
-<textarea id="content" onkeyup="updateLink()"></textarea>
+<textarea tabindex="1" id="content" onkeyup="updateLink()"></textarea>
 <style>
     body {
         margin: 0;
@@ -35,6 +35,12 @@
         text-transform:uppercase;
         color:white;
         opacity: 0.5;
+    }
+    a:hover, a:focus {
+        opacity: 1;
+    }
+    a:active {
+        color: #ccc;
     }
     iframe {
         position: absolute;
