@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <head>
+    <script>
+        var search = window.location.search.split('?');
+        var data = search[search.length - 1];
+        if (data) {
+            window.location = 'data:text/html;charset=utf-8;base64,'+data;
+        }
+    </script>
     <title>prodo</title>
     <link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAVFBMVEUAAAA7HThLKlVZMGdkTZ5+aHKokpzy6tny8fPz8fPz8vT08vL18/P18/X29PT29fX29fb29vb39ff39vj59/n5+Pf6+fj6+vn7+/r8+/v8/Pv///+TfMMYAAAAAXRSTlMAQObYZgAAAGFJREFUGBkFwTGKAgEQAMGaZdxAEAz8/w8Fk0uE27ZqnAC+MG6vaeI9fXFQVbnPiYOqivucLEn4Iw6qqufMYFVCDz4sAYAlALBc4BoGyz8QsFzTxABLCQGrAIhVAMQYAMgPRMM6KFq6B60AAAAASUVORK5CYII=" rel="icon" type="image/png" />
     <!-- https://github.com/ilesinge/prodo -->
@@ -58,13 +65,7 @@
 <a id="link" tabindex="2">link</a>
 <iframe id="iframe"></iframe>
 <textarea tabindex="1" id="content" oninput="updateLink()"></textarea>
-
 <script>
-    var search = window.location.search.split('?');
-    var data = search[search.length - 1];
-    if (data) {
-        window.location = 'data:text/html;charset=utf-8;base64,'+data;
-    }
     document.getElementById('content').focus();
     function updateLink() {
         var text = document.getElementById('content');
