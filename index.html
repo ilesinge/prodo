@@ -69,11 +69,11 @@
     document.getElementById('content').focus();
     function updateLink() {
         var text = document.getElementById('content');
+        document.getElementById('iframe').srcdoc = text.value;
         var base64 = window.btoa(unescape(encodeURIComponent(text.value)));
         var url = '?'+base64;
         var a = document.getElementById('link');
         a.style.display = 'block';
         a.href = url;
-        document.getElementById('iframe').srcdoc = text.value;
     }
 </script>
