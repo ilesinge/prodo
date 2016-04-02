@@ -3,9 +3,13 @@
     <script>
         var search = window.location.search.split('?');
         var data = search[search.length - 1];
+        if (!data) {
+            var data = window.location.hash.substring(1);
+        }
         if (data) {
             window.location = 'data:text/html;charset=utf-8;base64,'+data;
         }
+        window.onhashchange = function() { window.location.reload()};
     </script>
     <!-- https://github.com/ilesinge/prodo -->
     <title>prodo</title>
@@ -84,7 +88,7 @@
         var text = document.getElementById('content');
         document.getElementById('iframe').srcdoc = text.value;
         var base64 = window.btoa(unescape(encodeURIComponent(text.value)));
-        var url = '?'+base64;
+        var url = '#'+base64;
         var a = document.getElementById('link');
         a.style.display = 'block';
         a.href = url;
