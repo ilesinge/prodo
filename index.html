@@ -77,7 +77,7 @@
         var contents = document.getElementById('contents')
         contents.focus();
         function updateLink() {
-            display.srcdoc = contents.value;
+            display.srcdoc = '<meta charset="utf-8" />' + contents.value;
             var base64 = window.btoa(unescape(encodeURIComponent(contents.value)));
             var url = '#'+base64;
             var a = document.getElementById('link');
@@ -91,7 +91,7 @@
         }
         if (data) {
             input = window.atob(data);
-            document.documentElement.innerHTML = input;
+            document.documentElement.innerHTML = '<meta charset="utf-8" />' + decodeURIComponent(escape(input));
         }
         window.onhashchange = function() { window.location.reload()};
     </script>
